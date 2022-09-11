@@ -1,6 +1,13 @@
 fn main() {
     let x = 5;
-    println!("x is {}", x);
-    let x = 6;
-    println!("x is {}", x);
+    println!("outer x is {}", x);
+    let x = x + 1;
+    println!("outer x is {}", x);
+
+    {
+        let x = x + 2;
+        println!("inner x is {}", x);
+    }
+
+    println!("outer x is {}", x);
 }
